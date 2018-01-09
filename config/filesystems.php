@@ -55,6 +55,18 @@ return [
             'visibility' => 'public',
         ],
 
+        // For Backpack Backup Manager
+        'backups' => [
+            'driver' => 'local',
+            'root'   => storage_path('backups'),
+        ],
+
+        // For Backpack Log Manager
+        'storage' => [
+            'driver' => 'local',
+            'root'   => storage_path(),
+        ],
+
         'uploads' => [
             'driver' => 'local',
             'root' => public_path('uploads'),
