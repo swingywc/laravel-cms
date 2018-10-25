@@ -39,7 +39,7 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
     ```
 4. Run `mysql -u <USER> -p -e "CREATE DATABASE <DATABASE_NAME_IN_DOT_ENV_FILE>"` to create database.
 5. Run `php artisan migrate` in your terminal.
-6. Run `php artisan seed` to create users, roles and permissions to your database.
+6. Run `php artisan db:seed` to create users, roles and permissions to your database.
 7. Run `php artisan key:generate` to generate key for your application.
 8. Run `npm install --save` to get gulp functions work.
 
