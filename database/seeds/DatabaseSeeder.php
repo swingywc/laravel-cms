@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
           RolePermissionsTableSeeder::class,
           UserRolesTableSeeder::class,
           MenuItemsTableSeeder::class,
+          PageSettingsTableSeeder::class,
         ]);
     }
 }

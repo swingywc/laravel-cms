@@ -13,7 +13,12 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
 
 ### DIY menu for this CMS:
 
+- [x] Pages SEO
+
 ### Basic users and settings:
+
+- [x] Seeded webmaster, admin and user roles
+- [x] Basic permissions for website
 
 ## Getting started
 
@@ -36,6 +41,8 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
 ## Debug and console
 
 `php artisan tinker`
+
+#### Sometimes class didn't find, please use `composer dump-autoload` to refresh and read new files.
 
 ## Future implementation
 
