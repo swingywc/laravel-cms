@@ -1,0 +1,147 @@
+.footer
+  position: relative
+  text-align: center
+  background-color: #fff
+
+  &__container
+    padding: 0 0 30px
+
+  &__menu-section
+    padding: 0
+
+    +media-min-sm
+      padding-top: 30px
+
+  &__menu-column
+    padding: 0
+
+    .footer-menu-section
+      +media-min-sm
+        width: 48%
+        margin-right: 2%
+        float: left
+
+      .footer-menu
+        padding-left: 0
+        margin: 0
+        list-style: none
+        text-align: left
+        +transition(max-height ease-in 0.1s)
+
+        +media-max-xs
+          max-height: 0
+          overflow: hidden
+          border-bottom: 1px solid #999
+
+
+        &__title-btn
+          padding: 10px 15px
+          color: #fff
+          font-size: 15px
+          +display-flex
+          +justify-content(flex-start)
+          +align-items(center)
+
+          +media-max-sm
+            cursor: pointer
+
+          +media-min-sm
+            padding: 10px 0
+            font-size: 17px
+
+          &:before
+            +media-max-sm
+              content: "+"
+              font-size: 26px
+              font-weight: bold
+              display: inline-block
+              margin-right: 15px
+
+        &__item
+          margin-top: 0
+          +display-flex
+          +justify-content(space-between)
+          +align-items(center)
+
+          +media-max-sm
+            background-color: #222
+
+        &__item-link
+          position: relative
+          display: block
+          width: 100%
+          color: #fff
+          font-size: 16px
+          font-weight: bold
+          line-height: 22px
+          padding: 13px 40px 13px 20px
+
+          +media-min-sm
+            font-size: 14px
+            padding: 6px 20px 6px 10px
+
+          &:after
+            +media-min-sm
+              font: normal normal normal 14px/1 FontAwesome
+              content: "\f054"
+              position: absolute
+              right: 13px
+              top: 50%
+              +transform(translateY(-50%))
+
+          &:hover
+            background-color: #fff7
+            +transition(background-color ease-out 0.3s)
+
+    .footer-menu-section.active
+      .footer-menu
+        +media-max-sm
+          max-height: 500px
+          +transition(max-height ease-out 0.6s)
+
+  &__side-menu
+    margin-top: 30px
+    color: #fff
+
+    .footer__contact-section
+      text-align: left
+
+      .contact-us
+        font-size: 20px
+        font-weight: bold
+        margin-bottom: 10px
+
+        +media-min-sm
+          margin-top: 10px
+
+      .contact-row
+        padding: 4px 15px
+
+        .contact-link
+          color: #fff
+          font-size: 16px
+
+          i.fa
+            font-size: 20px
+            margin-right: 10px
+
+    .footer__social-media-section
+      margin-top: 30px
+
+      .media-column
+        margin: 5px
+        +inline-block-vertical(middle)
+
+        .social-link
+          font-size: 25px
+          color: #fff
+          +width-height(30px)
+          +display-flex
+          +justify-content(center)
+          +align-items(center)
+
+    .footer__copyright-column
+      margin-top: 10px
+      font-size: 13px
+      color: #fff
+

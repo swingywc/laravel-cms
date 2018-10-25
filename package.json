@@ -17,5 +17,13 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "gulp": "3.9.1",
+        "gulp-connect-php": "1.0.3",
+        "laravel-elixir": "6.0.0-18",
+        "laravel-elixir-browsersync-official": "^1.0.0",
+        "laravel-elixir-jade": "0.2.4",
+        "require-dir": "1.0.0"
     }
 }

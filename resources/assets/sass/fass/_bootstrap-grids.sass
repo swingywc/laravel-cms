@@ -1,0 +1,75 @@
+.container
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+
+  // Override Bootstrap CSS
+  +media-min-sm
+    width: 750px
+  +media-min-md
+    width: 800px
+  +media-min-lg
+    width: 970px
+
+  &:before, &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+*
+  &:before, &:after
+    +box-sizing(border-box)
+
+$grid-list: "&1"
+@for $i from 2 through $grid-columns
+  $grid-list: "#{$grid-list}, &#{$i}"
+
+@function grid-percentage($number)
+  @return percentage($number/$grid-columns)
+
+// Bootstrap Grid CSS
+.col-
+  &lg-, &md-, &sm-, &xs-
+    &1, &2, &3, &4, &5, &6, &7, &8, &9, &10, &11, &12
+      position: relative
+      min-height: 1px
+      padding-left:  ceil(($grid-gutter-width / 2))
+      padding-right: floor(($grid-gutter-width / 2))
+
+  &xs-
+    #{$grid-list}
+      float: left
+
+    @for $i from 1 through $grid-columns
+      &#{$i}
+        width: grid-percentage($i)
+
+  &sm-
+    +media-min-sm
+      #{$grid-list}
+        float: left
+
+      @for $i from 1 through $grid-columns
+        &#{$i}
+          width: grid-percentage($i)
+
+  &md-
+    +media-min-md
+      #{$grid-list}
+        float: left
+
+      @for $i from 1 through $grid-columns
+        &#{$i}
+          width: grid-percentage($i)
+
+  &lg-
+    +media-min-lg
+      #{$grid-list}
+        float: left
+
+      @for $i from 1 through $grid-columns
+        &#{$i}
+          width: grid-percentage($i)

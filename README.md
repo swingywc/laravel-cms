@@ -20,6 +20,11 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
 - [x] Seeded webmaster, admin and user roles
 - [x] Basic permissions for website
 
+### Languages:
+
+- [x] jade
+- [x] sass
+
 ## Getting started
 
 1. Make sure you have `composer` in your computer. ([click here](https://getcomposer.org/download/) for installation guide)
@@ -33,10 +38,18 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
 5. Run `php artisan migrate` in your terminal.
 6. Run `php artisan seed` to create users, roles and permissions to your database.
 7. Run `php artisan key:generate` to generate key for your application.
+8. Run `npm install --save` to get gulp functions work.
 
 ## Run your server in local
 
 `php artisan serve`
+
+## Development
+
+`gulp watch`
+
+After turning on the server by `php artisan serve`, run this command to switch on watcher.
+It will enable browserSync in port `3000`, and watch sass and jade files change.
 
 ## Debug and console
 

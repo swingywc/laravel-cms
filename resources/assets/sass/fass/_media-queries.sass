@@ -1,0 +1,87 @@
+/****
+    * Mixins - Media Queries
+    * I have set several mixins for media queries,
+    * so that you can just using this to achieve quick coding.
+    */
+
+/* @media (max-width: 543px) */
+=media-max-xs
+    @media (max-width: #{$screen-xs - 1px})
+        @content
+
+/* @media (min-width: 544px) */
+=media-min-xs
+    @media (min-width: #{$screen-xs})
+        @content
+
+/* @media (max-width: 767px) */
+=media-max-sm
+    @media (max-width: #{$screen-sm - 1px})
+        @content
+
+/* @media (min-width: 768px) */
+=media-min-sm
+    @media (min-width: #{$screen-sm})
+        @content
+
+/* @media (min-width: 768px) and (max-width: 991px) */
+=media-sm-md
+    @media (min-width: $screen-sm) and (max-width: #{$screen-md - 1px})
+        @content
+
+/* @media (min-width: 992px) */
+=media-min-md
+    @media (min-width: #{$screen-md})
+        @content
+
+/* @media (max-width: 992px) */
+=media-max-md
+    @media (max-width: #{$screen-md - 1px})
+        @content
+
+/* @media (min-width: 1200px) */
+=media-min-lg
+    @media (min-width: #{$screen-lg})
+        @content
+
+/* @media (min-width: customize) */
+=media-min-size($size)
+    @media (min-width: $size)
+        @content
+
+/* @media (max-width: customize) */
+=media-max-size($size)
+    @media (max-width: $size)
+        @content
+
+/* Hide the element start from $screen-md or below (<=992px) */
+.desktop-only
+    +media-max-md
+        display: none !important
+
+/* Hide the element start from $screen-md or above (>=992px) */
+.desktop-hide
+    +media-min-md
+        display: none !important
+
+/* Hide the element below $screen-sm and above $screen-md (<=768px && >=992px) */
+.tablet-only
+    +media-max-sm
+        display: none !important
+    +media-min-md
+        display: none !important
+
+/* Hide the element between $screen-sm and above $screen-md (<=768px && >=992px) */
+.tablet-hide
+    +media-sm-md
+        display: none !important
+
+/* Hide the element start from $screen-sm or above (>=768px) */
+.mobile-only
+    +media-min-sm
+        display: none !important
+
+/* Hide the element start from $screen-sm or below (<=768px) */
+.mobile-hide
+    +media-max-sm
+        display: none !important

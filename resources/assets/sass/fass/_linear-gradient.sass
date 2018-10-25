@@ -1,0 +1,95 @@
+/****
+    * Function - Replace Once
+    * Convert the search string to replace string inside the provided variable ONCE only
+    *
+    * @param $string - The provided variable that need to change
+    * @param $search - The string that need to search and replace
+    * @param $replace - The string that will replace the search string if exists
+    *
+    * USED IN : Mixin - Linear Gradient
+    */
+@function replace-once($string, $search, $replace)
+    $index: str-index($string, $search)
+
+    @if $index
+        @return str-slice($string, 1, $index - 1) + $replace + str-slice($string, $index + str-length($search))
+    @else
+        @return $string
+
+/****
+    * Function - Reverese Position
+    * The position of linear gradient inside safari is opposite comparing to the other browser.
+    * Therefore, provide this function to convert the position to opposite
+    *
+    * @param $value - The position
+    *
+    * USED IN : Mixin - Linear Gradient
+    */
+@function reverse-position($value)
+    $result: $value
+    $hasTop: str-index($value, top)
+    $hasBottom: str-index($value, bottom)
+    $hasLeft: str-index($value, left)
+    $hasRight: str-index($value, right)
+
+    @if $hasTop
+        @if $hasLeft                                   // Top Left or Left Top
+            @return replace-once(replace-once($result, top, bottom), left, right)
+        @else if $hasRight                             // Top Right or Right Top
+            @return replace-once(replace-once($result, top, bottom), right, left)
+        @else
+            @return replace-once($result, top, bottom) // Top
+    @else if $hasBottom
+        @if $hasLeft                                   // Bottom Left or Left Bottom
+            @return replace-once(replace-once($result, bottom, top), left, right)
+        @else if $hasRight                             // Bottom Right or Right Bottom
+            @return replace-once(replace-once($result, bottom, top), right, left)
+        @else
+            @return replace-once($result, bottom, top) // Bottom
+    @else if $hasLeft                                  // Left
+        @return replace-once($result, left, right)
+    @else if $hasRight                                 // Right
+        @return replace-once($result, right, left)
+
+/****
+    * Function - Get Gradient Direction
+    * Handle the background linear gradient direction with different browser prefix (ie, webkit)
+    *
+    * @param $env - Environment (ie, webkit)
+    * @param $value - Value that need to be change
+    *
+    * USED IN : Mixin - Linear Gradient
+    */
+@function get-gradient-direction($env, $value)
+    @if $env == "ie"                                   // For Internet Explorer
+        @if (type-of($value) == number)
+            @return $value
+        @else if (type-of($value) == string or type-of($value) == list)
+            @return unquote('to ' + $value)
+    @else if $env == "webkit"                          // For Safari
+        @if (type-of($value) == number)
+            @return 90deg - $value
+        @else if (type-of($value) == string or type-of($value) == list)
+            @return unquote(reverse-position($value))
+
+
+/****
+    * Mixin - Background: Linear Gradient
+    * I just support until 3 colors inside this mixin.
+    * If you want to add more color, just create a new mixin for yourselves.
+    *
+    * @param $fallback - Default Color for Fallback Use
+    * @param $variable1 - The first color (can add ratio)
+    * @param $variable2 - The second color (can add ratio)
+    * @param $position (Optional) - Add the position of the linear gradient
+    * @param $variable3 (Optional) - The third color (can add ratio)
+    *
+    */
+=linear-gradient($variable1, $variable2, $position: null, $variable3: null)
+    $statement: $variable1, $variable2 if($variable3, unquote(", " + $variable3), null)
+    $position: if($position, $position, bottom)
+
+    background: -webkit-linear-gradient(get-gradient-direction(webkit, $position), $statement)
+    background: -o-linear-gradient($position, $statement)
+    background: -moz-linear-gradient($position, $statement)
+    background: linear-gradient(get-gradient-direction(ie, $position), $statement)

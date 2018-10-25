@@ -1,0 +1,170 @@
+/* Mixin - Align Content */
+=align-content($value)
+    -webkit-align-content: $value
+    align-content: $value
+
+/* Mixin - Align Items */
+=align-items($value)
+    -webkit-align-items: $value
+    align-items: $value
+
+/* Mixin - Align Self */
+=align-self($value)
+    -webkit-align-self: $value
+    align-self: $value
+
+/* Mixin - Animation */
+=animation($value)
+    -webkit-animation: $value
+    -moz-animation: $value
+    -o-animation: $value
+    animation: $value
+
+/* Mixin - Animation Delay */
+=animation-delay($value)
+    -webkit-animation-delay: $value
+    -moz-animation-delay: $value
+    -o-animation-delay: $value
+    animation-delay: $value
+
+/* Mixin - Animation Direction */
+=animation-direction($value)
+    -webkit-animation-direction: $value
+    -moz-animation-direction: $value
+    -o-animation-direction: $value
+    animation-direction: $value
+
+/* Mixin - Animation Duration */
+=animation-duration($value)
+    -webkit-animation-duration: $value
+    -moz-animation-duration: $value
+    -o-animation-duration: $value
+    animation-duration: $value
+
+/* Mixin - Animation Fill Mode */
+=animation-fill-mode($value)
+    -webkit-animation-fill-mode: $value
+    -moz-animation-fill-mode: $value
+    -o-animation-fill-mode: $value
+    animation-fill-mode: $value
+
+/* Mixin - Backface Visibility */
+=backface-visibility($value)
+    -webkit-backface-visibility: $value
+    -moz-backface-visibility: $value
+    backface-visibility: $value
+
+=border-radius($statement)
+    -webkit-border-radius: $statement
+    -moz-border-radius: $statement
+    border-radius: $statement
+
+/* Mixin - Box Shadow */
+=box-shadow($statement)
+    -webkit-box-shadow: $statement
+    -moz-box-shadow: $statement
+    box-shadow: $statement
+
+/* Mixin - Box Sizing */
+=box-sizing($value)
+    -webkit-box-sizing: $value
+    -moz-box-sizing: $value
+    box-sizing: $value
+
+/* Mixin - Break Inside Avoid */
+=break-inside-avoid
+    -webkit-column-break-inside: avoid
+    page-break-inside: avoid
+    break-inside: avoid
+
+/* Mixin - Clip Path */
+=clip-path($statement)
+    -webkit-clip-path: $statement
+    clip-path: $statement
+
+/* Mixin - Column Count */
+=column-count($value)
+    -webkit-column-count: $value
+    -moz-column-count: $value
+    column-count: $value
+
+/* Mixin - Column Gap */
+=column-gap($value)
+    -webkit-column-gap: $value
+    -moz-column-gap: $value
+    column-gap: $value
+
+/* Mixin - Display: flex */
+=display-flex
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+
+/* Mixin - Display: inline-flex */
+=display-inline-flex
+    display: -webkit-inline-box
+    display: -moz-inline-box
+    display: -ms-inline-flexbox
+    display: -webkit-inline-flex
+    display: inline-flex
+
+/* Mixin - Filter */
+=filter($statement)
+    -webkit-filter: $statement
+    filter: $statement
+
+/* Mixin - Flex Wrap */
+=flex-wrap($value)
+    -webkit-flex-wrap: $value
+    -moz-flex-wrap: $value
+    flex-wrap: $value
+
+/* Mixin - Justify Content */
+=justify-content($value)
+    -webkit-justify-content: $value
+    -moz-justify-content: $value
+    justify-content: $value
+
+/* Mixin - Make Keyframe */
+=keyframes($name)
+    @keyframes #{$name}
+        @content
+    @-o-keyframes #{$name}
+        @content
+    @-ms-keyframes #{$name}
+        @content
+    @-moz-keyframes #{$name}
+        @content
+    @-webkit-keyframes #{$name}
+        @content
+
+/* Mixin - Make Transform */
+=transform($statement)
+    transform: $statement
+    -o-transform: $statement
+    -ms-transform: $statement
+    -moz-transform: $statement
+    -webkit-transform: $statement
+
+/* Mixin - Make Transition */
+=transition($statement)
+    transition: $statement
+    -o-transition: $statement
+    -ms-transition: $statement
+    -moz-transition: $statement
+    -webkit-transition: $statement
+
+/* Mixin - Text Overflow */
+=text-overflow($value)
+    text-overflow: $value
+    -o-text-overflow: $value
+
+/* Mixin - User Select */
+=user-select($value)
+    -webkit-touch-callout: $value
+    -webkit-user-select: $value
+    -moz-user-select: $value
+    -ms-user-select: $value
+    user-select: $value

@@ -1,0 +1,59 @@
+/* Mixin - Font Bold and size */
+=font-size-weight($size, $bold: null)
+    @if ($bold == null)
+        font-size: $size
+        font-weight: bold
+    @else
+        font-size: $size
+        font-weight: $bold
+
+/* Mixin - Full Zero Position with absolute */
+=full-zero-position
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+/* Mixin - Display inline block with vertical align */
+=inline-block-vertical($vertical)
+    display: inline-block
+    vertical-align: $vertical
+
+/* Mixin - Combine top, right, bottom, left CSS together, use like margin and padding */
+=location($top, $right: null, $bottom: null, $left: null)
+    @if ($right == null)
+        $right: $top
+        $bottom: $top
+        $left: $top
+    @else if ($bottom == null)
+        $bottom: $top
+        $left: $right
+    @else if ($left == null)
+        $left: $right
+
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+
+/* Mixin - No Margin and Padding */
+=no-margin-padding
+    margin: 0
+    padding: 0
+
+/* Mixin - No Text Decoration */
+=no-text-decoration($color)
+    text-decoration: none
+    color: $color
+
+/* Mixin - Text Overflow Ellipsis */
+=text-overflow-ellipsis
+    white-space: nowrap
+    overflow: hidden
+    +text-overflow(ellipsis)
+
+/* Mixin - Width and Height */
+=width-height($value)
+    width: $value
+    height: $value
