@@ -16,7 +16,7 @@ class PagesController extends Controller
         $this->menu = MenuItem::getTree();
     }
 
-    function home()
+    public function home()
     {
       $pageSetting = PageSetting::findBySlug('/');
 
@@ -30,7 +30,7 @@ class PagesController extends Controller
       ]);
     }
 
-    function show($slug)
+    public function show($slug)
     {
       $pageSetting = PageSetting::findBySlug($slug);
 

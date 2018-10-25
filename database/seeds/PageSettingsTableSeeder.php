@@ -17,7 +17,7 @@ class PageSettingsTableSeeder extends Seeder
                 'id' => 1,
                 'slug' => '/',
                 'view' => 'pages/home/index',
-                'title' => 'Home | Website',
+                'title' => 'Home | ' . env('APP_NAME'),
                 'description' => '',
                 'keyword' => ''
             ],

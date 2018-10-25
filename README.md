@@ -27,7 +27,7 @@ This is a CMS to deploy and use for building website. Its fast pace and easy ins
 3. Copy `.env.example` file to make a `.env` file. Fill in neccessary information inside.
 
     ```
-      DB_DATABASE, DB_USERNAME, DB_PASSWORD, BACKPACK_ADMIN_NAME, BACKPACK_ADMIN_EMAIL, BACKPACK_ADMIN_PASSWORD
+      APP_NAME, DB_DATABASE, DB_USERNAME, DB_PASSWORD, BACKPACK_ADMIN_NAME, BACKPACK_ADMIN_EMAIL, BACKPACK_ADMIN_PASSWORD
     ```
 4. Run `mysql -u <USER> -p -e "CREATE DATABASE <DATABASE_NAME_IN_DOT_ENV_FILE>"` to create database.
 5. Run `php artisan migrate` in your terminal.
