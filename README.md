@@ -1,8 +1,9 @@
 # Laravel CMS
 
-This is a CMS to deploy and use for building website. Its fast pace and easy installation is good to use in freelance!
-
+## IMPORTANT!!!
 > If you clone this repository to make a new project, REMEMBER to change your git remote origin to new repository.
+
+This is a CMS to deploy and use for building website. Its fast pace and easy installation is good to use in freelance!
 
 ### Add-ons in this CMS:
 
